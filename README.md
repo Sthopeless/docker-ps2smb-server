@@ -38,10 +38,10 @@ docker run -p 445:445 \
 
 ### OpenPS2Loader connection credentials:
 
-Just leave both the username and password fields empty, as this server supports anonymous GUEST logins
+Just leave both the username and password fields empty, as this server supports anonymous GUEST logins.
 
-## !Important!, don't forget to allow traffic to the port you chose in the -p setting on your firewall
+## ⚠️Important⚠️, don't forget to allow traffic to the port you chose in the -p setting on your firewall
 
-## Licence
+## License
 
 MIT.
