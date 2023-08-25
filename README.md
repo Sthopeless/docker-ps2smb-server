@@ -24,18 +24,27 @@ Tested working with the latest version of OPL at the time of writing using Fedor
 ./down.sh
 ```
 
-### Building the image and running the container without 'up.sh'
+### Running the container without 'up.sh'
 
-You need to supply the following environment variables:
+The image is posted on [DockerHub](https://hub.docker.com/r/edisnord/ps2smb-server).
+
+When running the container, you need to supply the following environment variables:
 - RUN_UID: UID for the samba user
 - RUN_GID: GID for the samba user
 
-When running the container, you should mount your OPL game directory to the
-'/mount' directory as a volume, and also expose the port 445 to a port of your choice on the host
+You should mount your OPL game directory to the
+'/mount' in the container directory as a volume, and also publish the port 445 of the container to a port of your choice on the host.
 
-### OPL credentials on network settings:
+```
+# Example run:
 
-Just leave both empty
+
+
+```
+
+### OpenPS2Loader connection credentials:
+
+Just leave
 
 ### Running with systemd
 
