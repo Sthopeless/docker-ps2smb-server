@@ -51,7 +51,7 @@ docker run -p 445:445 \
 
 ### OpenPS2Loader connection credentials:
 
-Just leave
+Just leave both the username and password fields empty, as this server supports anonymous GUEST logins
 
 ### Running with systemd
 
