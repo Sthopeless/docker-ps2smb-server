@@ -2,14 +2,12 @@
 
 if [ -z "$RUN_UID" ]
 then
-    echo "UID not set properly (empty)"
-    exit 1
+    RUN_UID=1000
 fi
 
 if [ -z "$RUN_GID" ]
 then
-    echo "GID not set properly (empty)"
-    exit 1
+    RUN_GID=1001
 fi
 
 if [ -z "$LOG_LEVEL" ]
