@@ -9,9 +9,8 @@ services:
               target: "/mount"
         ports:
             - "$RUN_PORT:445"
-        restart_policy: 
-            condition: on-failure
-        environment: 
+        restart: on-failure
+        environment:
             - "RUN_UID=${RUN_UID}"
             - "RUN_GID=${RUN_GID}"
         # Required for selinux context passthrough.

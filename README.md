@@ -7,10 +7,10 @@ Tested working with the latest version of OPL at the time of writing using a Fed
 
 ### Preface
 
-- The run script contains required variables - modify to suit. 
+- The run script contains required variables - modify to suit.
 - By default podman-compose is used, but you can change this to docker-compose easily.
 - Based off the [Samba Docker image](https://hub.docker.com/r/dperson/samba) - you might need to run manually once in order to login and download the image on first use.
-- Uses port 1011 by default.
+- Uses port 445 by default.
 - See `image/smb.conf` if you need to modify the internal Samba configuration.
 
 ### Running manually
@@ -22,7 +22,7 @@ Tested working with the latest version of OPL at the time of writing using a Fed
 
 ### Running with systemd
 
-- Place the repository under `/root/ps2smb-server`. 
+- Place the repository under `/root/ps2smb-server`.
 - Copy `ps2smb-server.service` to the `/etc/systemd/system` directory.
 - `systemctl daemon-reload`.
 - `systemctl start ps2smb-server`.
