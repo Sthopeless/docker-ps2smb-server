@@ -1,7 +1,7 @@
 # PS2SMB Server
 
 Containerized Open PS2 Loader SMB server.
-Tested working with the latest version of OPL at the time of writing using Fedora 38.
+Tested working with the latest version of OPL at the time.
 
 ## Usage
 
