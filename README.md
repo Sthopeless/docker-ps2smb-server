@@ -15,9 +15,10 @@ Tested working with the latest version of OPL at the time.
 
 The image is posted on [DockerHub](https://hub.docker.com/r/edisnord/ps2smb-server).
 
-When running the container, you can supply the following environment variables:
-- RUN_UID: UID for the samba user
-- RUN_GID: GID for the samba user
+When building the image yourself, you can supply the following arguments:
+- UID: UID for the samba user
+- GID: GID for the samba user
+- LOG_LEVEL: Samba log level
 
 You should mount your OPL game directory to the
 '/mount' in the container directory as a volume, and also publish the port 445 of the container to a port of your choice on the host.
@@ -26,14 +27,8 @@ You should mount your OPL game directory to the
 # Simple run
 docker run -p 445:445 \
                     --mount type=bind,source="/home/$USER/Documents/PS2SMB",target="/mount" -d \
-                    edisnord/ps2smb-server:1
+                    edisnord/ps2smb-server:2
 
-# Example run:
-docker run -p 445:445 \
-                    --env=RUN_UID='1001' \
-                    --env=RUN_GID='1001' \
-                    --mount type=bind,source="/home/$USER/Documents/PS2SMB",target="/mount" -d \
-                    edisnord/ps2smb-server:1
 ```
 
 ### OpenPS2Loader connection credentials:
