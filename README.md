@@ -27,7 +27,7 @@ You should mount your OPL game directory to the
 # Simple run
 docker run -p 445:445 \
                     --mount type=bind,source="/home/$USER/Documents/PS2SMB",target="/mount" -d \
-                    edisnord/ps2smb-server:latest
+                    edisnord/ps2smb-server:3
 
 ```
 
