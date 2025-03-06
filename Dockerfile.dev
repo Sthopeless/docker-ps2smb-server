@@ -49,7 +49,7 @@ RUN echo "[global]" > /etc/samba/smb.conf && \
     echo "    wide links = yes" >> /etc/samba/smb.conf
 
 RUN chmod 644 /etc/samba/smb.conf
-RUN chmod 777 /mount
+RUN mkdir -p /mount && chmod 777 /mount
 
 EXPOSE 445
 
