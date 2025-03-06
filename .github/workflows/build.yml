@@ -23,7 +23,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: name/app
+          images: sthopeless/docker-ps2smb-server
       -
         name: Login to DockerHub
         if: github.event_name != 'pull_request'
