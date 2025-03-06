@@ -50,6 +50,10 @@ RUN echo "[global]" > /etc/samba/smb.conf && \
 
 RUN chmod 644 /etc/samba/smb.conf
 RUN mkdir -p /mount && chmod 777 /mount
+RUN echo "===================================================================================" && \
+    echo "===================================================================================" && \
+    ls -l /mount && ls -l /mount/DVD && \
+    cat /etc/samba/smb.conf
 
 EXPOSE 445
 
