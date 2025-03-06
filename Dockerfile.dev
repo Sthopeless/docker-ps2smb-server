@@ -48,12 +48,7 @@ RUN echo "[global]" > /etc/samba/smb.conf && \
     echo "    follow symlinks = yes" >> /etc/samba/smb.conf && \
     echo "    wide links = yes" >> /etc/samba/smb.conf
 
-RUN chmod 644 /etc/samba/smb.conf && \
-    mkdir -p /mount && \
-    chmod 777 /mount && \
-    ls -l /mount && \
-    ls -l /mount/DVD && \
-    cat /etc/samba/smb.conf
+RUN chmod 644 /etc/samba/smb.conf
 
 EXPOSE 445
 
