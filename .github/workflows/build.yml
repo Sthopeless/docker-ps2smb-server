@@ -6,7 +6,6 @@ on:
     - cron: '35 10 * * *'
   push:
     branches: [ "main" ]
-    # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "main" ]
@@ -23,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: sthopeless/docker-ps2smb-server
+          images: sthopeless/docker-ps2smb-server:latest
       -
         name: Login to DockerHub
         if: github.event_name != 'pull_request'
