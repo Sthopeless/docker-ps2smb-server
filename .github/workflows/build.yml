@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: sthopeless/docker-ps2smb-server:latest
+          images: sthopeless/docker-ps2smb-server
       -
         name: Login to DockerHub
         if: github.event_name != 'pull_request'
@@ -36,5 +36,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ${{ steps.meta.outputs.tags }}
+            sthopeless/docker-ps2smb-server:latest
           labels: ${{ steps.meta.outputs.labels }}
