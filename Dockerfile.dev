@@ -13,43 +13,43 @@ RUN adduser -S -D -H -h /tmp \
 
 RUN smbpasswd -s -a -n "user"
 
-RUN echo "[global]\n\
-    socket options = TCP_NODELAY TCP_KEEPIDLE=20 IPTOS_LOWDELAY SO_KEEPALIVE\n\
-    getwd cache = yes\n\
-    large readwrite = yes\n\
-    aio read size = 0\n\
-    aio write size = 0\n\
-    strict locking = no\n\
-    follow symlinks = yes\n\
-    ntlm auth = yes\n\
-    lanman auth = yes\n\
-    log level = 3\n\
-    client min protocol = CORE\n\
-    client max protocol = NT1\n\
-    server max protocol = SMB3\n\
-    server min protocol = NT1\n\
-    strict sync = no\n\
-    keepalive = 0\n\
-    map to guest = bad user\n\
-    allow insecure wide links = yes\n\
-\n\
-[PS2SMB]\n\
-    comment = PS2SMB\n\
-    path = /mount\n\
-    read only = no\n\
-    Browseable = yes\n\
-    Writeable = Yes\n\
-    only guest = no\n\
-    create mask = 0777\n\
-    directory mask = 0777\n\
-    Public = yes\n\
-    Guest ok = yes\n\
-    force user = user\n\
-    follow symlinks = yes\n\
-    wide links = yes" > /etc/samba/smb.conf
-    
-# COPY smb.conf /etc/samba/smb.conf
-RUN chmod u+r /etc/samba/smb.conf
+RUN echo "[global]" > /etc/samba/smb.conf && \
+    echo "    socket options = TCP_NODELAY TCP_KEEPIDLE=20 IPTOS_LOWDELAY SO_KEEPALIVE" >> /etc/samba/smb.conf && \
+    echo "    getwd cache = yes" >> /etc/samba/smb.conf && \
+    echo "    large readwrite = yes" >> /etc/samba/smb.conf && \
+    echo "    aio read size = 0" >> /etc/samba/smb.conf && \
+    echo "    aio write size = 0" >> /etc/samba/smb.conf && \
+    echo "    strict locking = no" >> /etc/samba/smb.conf && \
+    echo "    follow symlinks = yes" >> /etc/samba/smb.conf && \
+    echo "    ntlm auth = yes" >> /etc/samba/smb.conf && \
+    echo "    lanman auth = yes" >> /etc/samba/smb.conf && \
+    echo "    log level = 3" >> /etc/samba/smb.conf && \
+    echo "    client min protocol = CORE" >> /etc/samba/smb.conf && \
+    echo "    client max protocol = NT1" >> /etc/samba/smb.conf && \
+    echo "    server max protocol = SMB3" >> /etc/samba/smb.conf && \
+    echo "    server min protocol = NT1" >> /etc/samba/smb.conf && \
+    echo "    strict sync = no" >> /etc/samba/smb.conf && \
+    echo "    keepalive = 0" >> /etc/samba/smb.conf && \
+    echo "    map to guest = bad user" >> /etc/samba/smb.conf && \
+    echo "    allow insecure wide links = yes" >> /etc/samba/smb.conf && \
+    echo "" >> /etc/samba/smb.conf && \
+    echo "[PS2SMB]" >> /etc/samba/smb.conf && \
+    echo "    comment = PS2SMB" >> /etc/samba/smb.conf && \
+    echo "    path = /mount" >> /etc/samba/smb.conf && \
+    echo "    read only = no" >> /etc/samba/smb.conf && \
+    echo "    Browseable = yes" >> /etc/samba/smb.conf && \
+    echo "    Writeable = Yes" >> /etc/samba/smb.conf && \
+    echo "    only guest = no" >> /etc/samba/smb.conf && \
+    echo "    create mask = 0777" >> /etc/samba/smb.conf && \
+    echo "    directory mask = 0777" >> /etc/samba/smb.conf && \
+    echo "    Public = yes" >> /etc/samba/smb.conf && \
+    echo "    Guest ok = yes" >> /etc/samba/smb.conf && \
+    echo "    force user = user" >> /etc/samba/smb.conf && \
+    echo "    follow symlinks = yes" >> /etc/samba/smb.conf && \
+    echo "    wide links = yes" >> /etc/samba/smb.conf
+
+RUN chmod 644 /etc/samba/smb.conf
+RUN chmod 777 /mount
 
 EXPOSE 445
 
